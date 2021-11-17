@@ -208,6 +208,19 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Status_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Status__c , &apos;Approved&apos;) , IMAGE(&quot;/resource/StatusImages/thumbs-up.png&quot;, &quot;Accepted&quot;, 20, 20),
+IF ( ISPICKVAL( Status__c , &apos;Rejected&apos;), IMAGE(&quot;/resource/StatusImages/thumbs-down.png&quot;, &quot;Rejected&quot;, 20, 20),
+IMAGE(&quot;/resource/StatusImages/draft.png&quot;, &quot;In-Process&quot;, 20, 20)))</formula>
+        <label>Status Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
@@ -287,6 +300,7 @@
         <columns>External_Id__c</columns>
         <columns>Purpose_of_Trip__c</columns>
         <columns>Status__c</columns>
+        <columns>Status_Indicator__c</columns>
         <columns>Trip_Start_Date__c</columns>
         <columns>Trip_End_Date__c</columns>
         <columns>Destination_State__c</columns>
@@ -302,6 +316,7 @@
         <columns>Department__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>Status__c</columns>
+        <columns>Status_Indicator__c</columns>
         <columns>Destination_State__c</columns>
         <columns>Trip_Start_Date__c</columns>
         <columns>Trip_End_Date__c</columns>
