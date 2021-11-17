@@ -189,6 +189,12 @@
                 <identifier>RecordOut_of_State__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Total_Expenses__c</fieldItem>
+                <identifier>RecordTotal_Expenses_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-fc11802c-d7e1-48c6-974d-a80d384e21a1</name>
         <type>Facet</type>
     </flexiPageRegions>
