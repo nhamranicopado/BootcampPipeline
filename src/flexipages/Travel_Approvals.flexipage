@@ -87,6 +87,12 @@
                 <identifier>RecordStatus__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Status_Indicator__c</fieldItem>
+                <identifier>RecordStatus_Indicator_cField1</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-345607f3-db90-4fa6-81b3-176a3d9026cf</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -187,6 +193,12 @@
             <fieldInstance>
                 <fieldItem>Record.Out_of_State__c</fieldItem>
                 <identifier>RecordOut_of_State__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Total_Expenses__c</fieldItem>
+                <identifier>RecordTotal_Expenses_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-fc11802c-d7e1-48c6-974d-a80d384e21a1</name>

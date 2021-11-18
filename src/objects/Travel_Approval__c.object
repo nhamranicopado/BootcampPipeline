@@ -208,6 +208,19 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Status_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Status__c , &apos;Approved&apos;) , IMAGE(&quot;/resource/StatusImages/thumbs-up.png&quot;, &quot;Accepted&quot;, 20, 20),
+IF ( ISPICKVAL( Status__c , &apos;Rejected&apos;), IMAGE(&quot;/resource/StatusImages/thumbs-down.png&quot;, &quot;Rejected&quot;, 20, 20),
+IMAGE(&quot;/resource/StatusImages/draft.png&quot;, &quot;In-Process&quot;, 20, 20)))</formula>
+        <label>Status Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <externalId>false</externalId>
         <label>Status</label>
@@ -252,6 +265,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Total_Expenses__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Expenses</label>
+        <summarizedField>Expense_Item__c.Amount__c</summarizedField>
+        <summaryForeignKey>Expense_Item__c.Travel_Approval__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
         <fullName>Trip_End_Date__c</fullName>
         <externalId>false</externalId>
         <label>Trip End Date</label>
@@ -276,11 +300,13 @@
         <columns>External_Id__c</columns>
         <columns>Purpose_of_Trip__c</columns>
         <columns>Status__c</columns>
+        <columns>Status_Indicator__c</columns>
         <columns>Trip_Start_Date__c</columns>
         <columns>Trip_End_Date__c</columns>
         <columns>Destination_State__c</columns>
         <columns>Out_of_State__c</columns>
         <columns>Department__c</columns>
+        <columns>Total_Expenses__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -290,9 +316,11 @@
         <columns>Department__c</columns>
         <columns>CREATEDBY_USER</columns>
         <columns>Status__c</columns>
+        <columns>Status_Indicator__c</columns>
         <columns>Destination_State__c</columns>
         <columns>Trip_Start_Date__c</columns>
         <columns>Trip_End_Date__c</columns>
+        <columns>Total_Expenses__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>Out_of_State__c</field>
@@ -329,6 +357,13 @@
         <errorConditionFormula>Destination_State__c &lt;&gt; UPPER( Destination_State__c )</errorConditionFormula>
         <errorDisplayField>Destination_State__c</errorDisplayField>
         <errorMessage>Destination State must be entered in UPPERCASE</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Trip_end_date_after_start_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Trip_End_Date__c &lt; Trip_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Trip_End_Date__c</errorDisplayField>
+        <errorMessage>Trip end date must be greater than or equal to start date</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
