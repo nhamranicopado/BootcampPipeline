@@ -5,7 +5,7 @@ public class  BBBConflictTest {
         
         Decimal input = 10;
         Test.startTest();
-        decimal result =  AAAConflict.countPlusOne(input);
+        decimal result =  BBBConflict.countPlusOne(input);
         Test.stopTest();
         System.assertEquals(11, result);
     }
