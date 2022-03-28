@@ -260,6 +260,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Description_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Description 1</label>
+        <length>9</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Description_test_Area__c</fullName>
         <externalId>false</externalId>
         <label>Description test Area</label>
